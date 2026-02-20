@@ -1,0 +1,107 @@
+/* ==============================================================================
+   LUMINA WAYBAR STYLE
+   ============================================================================== */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(26, 26, 26, 0.7);
+    /* Deep dark with transparency */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 12px;
+}
+
+/* Individual Module Capsules */
+#workspaces,
+#cpu,
+#memory,
+#window,
+#pulseaudio,
+#network,
+#battery,
+#clock,
+#tray {
+    background: rgba(45, 45, 45, 0.5);
+    padding: 0px 15px;
+    margin: 5px 3px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Specific Module Styles --- */
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #ffffff;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.active {
+    /* Lumina Cyan Highlight */
+    color: #00ffcc;
+    border-bottom: 3px solid #00ffcc;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+/* Center Module (Window Title) */
+#window {
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    /* Purple accent */
+    font-weight: bold;
+}
+
+/* Right Side Accents */
+#clock {
+    color: #00ffcc;
+    /* Cyan */
+}
+
+#battery.charging {
+    color: #26A65B;
+}
+
+#battery.warning:not(.charging) {
+    color: #ffbe76;
+}
+
+#battery.critical:not(.charging) {
+    color: #f12711;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#pulseaudio {
+    color: #8a2be2;
+    /* Purple */
+}
+
+#network {
+    color: #45aaf2;
+}
+
+#tray {
+    background: rgba(0, 255, 204, 0.1);
+    /* Subtle Cyan glow */
+}
