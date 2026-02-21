@@ -2,7 +2,7 @@
 # Lumina Screenshot Tool
 
 if; then
-    grim -g "$(slurp)" - | wl-copy
+    GRIM_DEFAULT_DIR=$HOME/Images grim
     notify-send -a "Screenshot" -u low "Region Captured" "Image copied to clipboard."
 elif; then
     grim - | wl-copy

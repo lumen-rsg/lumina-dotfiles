@@ -1,14 +1,14 @@
 {
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 40,
-    "margin-top": 10,
-    "margin-left": 10,
-    "margin-right": 10,
+    //"layer": "top",
+    //"position": "top",
+    //"mod": "dock",
+    //"exclusive": true,
+    //"passthrough": false,
+    //"gtk-layer-shell": true,
+    "height": 19,
+    //"margin-top": 10,
+    //"margin-left": 10,
+    //"margin-right": 10,
     "modules-left": [
         "hyprland/workspaces",
         "cpu",
@@ -47,7 +47,7 @@
     },
     "clock": {
         "format": " {:%H:%M}",
-        "format-alt": " {:%A, %B %d, %Y}",
+        "format-alt": " {:%d-%m-%Y}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>"
     },
     "battery": {
@@ -58,41 +58,38 @@
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        "format-icons": [ "󰂎", "󰁺", "󰁾", "󰂂", "󰁹" ]
     },
     "network": {
-        "format-wifi": " {essid}",
-        "format-ethernet": " {ifname}",
-        "format-linked": " {ifname} (No IP)",
-        "format-disconnected": "⚠ Disconnected",
-        "on-click": "nm-connection-editor"
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{ipaddr} 󰖩 ",
+        "format-ethernet": "{ipaddr}  ",
+        "tooltip-format": "{ifname} via {gwaddr}  ",
+        "format-linked": "{ifname} (No IP)  ",
+        "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": " Muted",
+        // "scroll-step": 1, // %, can be a float
+        //"format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}󰂯",
+        "format-bluetooth-muted": " {icon}󰂯",
+        "format-muted": " ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
             "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
+            "default": ["", " ", " "]
         },
         "on-click": "pavucontrol"
     },
     "tray": {
-        "icon-size": 18,
+        //"icon-size": 18,
         "spacing": 10
     }
 }
